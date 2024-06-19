@@ -21,46 +21,46 @@
 
 #### Опис основних функцій та методів з поясненням їх роботи:
      ```python
-     import re
-    import numpy as np
-    
-    def interpolate_missing(numb):
-        interpolated = []
-        for i, num in enumerate(numb):
-            if num is None:
-                leftind = i - 1
-                rightind = i + 1
-                leftval = None
-                rightval = None
-                while leftind >= 0:
-                    if numb[leftind] is not None:
-                        leftval = numb[leftind]
-                        break
-                    leftind -= 1
-                while rightind < len(numb):
-                    if numb[rightind] is not None:
-                        rightval = numb[rightind]
-                        break
-                    rightind += 1
-        
-            if leftval is not None and rightval is not None:
-                distance = rightind - leftind
-                interpolatedval = leftval + ((rightval - leftval) / distance) * (i - leftind)
-                interpolated.append(round(interpolatedval))
-            elif leftval is not None:
-                interpolated.append(leftval)
-            elif rightval is not None:
-                interpolated.append(rightval)
-            else:
-                interpolated.append(None)
-        else:
-            interpolated.append(num)
-    return interpolated
-    # Приклад використання функції interpolate_missing
-    nums = [1, None, None, 4, None, 6]
-    interpolated_nums = interpolate_missing(nums)
-    print(interpolated_nums)
-     ```
+          import re
+          import numpy as np
+         
+         def interpolate_missing(numb):
+             interpolated = []
+             for i, num in enumerate(numb):
+                 if num is None:
+                     leftind = i - 1
+                     rightind = i + 1
+                     leftval = None
+                     rightval = None
+                     while leftind >= 0:
+                         if numb[leftind] is not None:
+                             leftval = numb[leftind]
+                             break
+                         leftind -= 1
+                     while rightind < len(numb):
+                         if numb[rightind] is not None:
+                             rightval = numb[rightind]
+                             break
+                         rightind += 1
+             
+                 if leftval is not None and rightval is not None:
+                     distance = rightind - leftind
+                     interpolatedval = leftval + ((rightval - leftval) / distance) * (i - leftind)
+                     interpolated.append(round(interpolatedval))
+                 elif leftval is not None:
+                     interpolated.append(leftval)
+                 elif rightval is not None:
+                     interpolated.append(rightval)
+                 else:
+                     interpolated.append(None)
+             else:
+                 interpolated.append(num)
+         return interpolated
+         # Приклад використання функції interpolate_missing
+         nums = [1, None, None, 4, None, 6]
+         interpolated_nums = interpolate_missing(nums)
+         print(interpolated_nums)
+          ```
 #### Результат:
 ![image](https://github.com/yatagarasu123/lab13/assets/145234911/04ec671d-3957-40c6-aeae-752cd2b81421)
 
