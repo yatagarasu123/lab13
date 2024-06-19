@@ -20,7 +20,7 @@
 - **README.md**: описує структуру проекту, призначення кожного файлу, опис основних функцій та їх приклади використання.
 
 #### Опис основних функцій та методів з поясненням їх роботи:
-     ```python
+```python
           import re
           import numpy as np
          
@@ -60,7 +60,7 @@
          nums = [1, None, None, 4, None, 6]
          interpolated_nums = interpolate_missing(nums)
          print(interpolated_nums)
-          ```
+```
 #### Результат:
 ![image](https://github.com/yatagarasu123/lab13/assets/145234911/04ec671d-3957-40c6-aeae-752cd2b81421)
 
